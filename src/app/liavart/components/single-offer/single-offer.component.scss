@@ -1,0 +1,28 @@
+figure{
+  margin: auto;
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  img{
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.bloc1{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  .title{
+    flex: 1;
+    font-weight: bold;
+  }
+  .date{
+    flex: 1;
+  }
+}
+
+main{
+  padding: 12px;
+}
+

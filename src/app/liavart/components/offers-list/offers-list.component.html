@@ -1,0 +1,23 @@
+<div class="main">
+  <div class="list">
+    <button [routerLink]="'/liavart/main-page/'+offer.id" class="offer" *ngFor="let offer of offers$ | async">
+      <figure>
+        <img [src]="(offer.id%2==1) ? '/assets/icon.png' :'/assets/blankProfilePicture.png'" alt="profile">
+      </figure>
+      <div>
+        <p>{{ offer.title }}</p>
+        <p>Position : {{ offer.position }}</p>
+        <p>work_style: {{ offer.work_style }} Contract: {{ offer.contract }}</p>
+        <p class="publishing_date" *ngIf="offer.date">{{ offer.date | date: 'dd/MMMM/YYYY, hh:mm a' }}</p>
+      </div>
+    </button>
+  </div>
+  <div *ngIf="offers$ | async as offer">
+    <div class="display" *ngIf="id$ | async as id">
+      <app-single-offer *ngIf="id.id!=undefined && id.id!=-1" [offer]="offer[id.id]" [imageUrl]="id.imageUrl"></app-single-offer>
+    </div>
+  </div>
+</div>
+<p class="p_button">
+<button mat-mini-fab class="addButton" (click)="onAddButton()"><mat-icon>add</mat-icon></button>
+</p>

@@ -1,0 +1,32 @@
+<main>
+  <figure>
+    <img [src]="imageUrl" alt="profile">
+  </figure>
+  <div class="bloc1">
+    <h1 class="title">{{ offer.title }}</h1>
+    <p class="date">{{ offer.date | date: "dd/MMMM/YYYY, hh:mm a" }}</p>
+  </div>
+  <div class="bloc2">
+    <p class="post"><span>Proposed post : </span>{{ offer.position }}</p>
+    <p class="field"><span>Field of activity: </span>{{ offer.field }}</p>
+  </div>
+  <div *ngIf="offer.missions" class="missions">
+    <h2>Missions</h2>
+    <ul>
+      <li *ngFor="let mission of offer.missions">
+        {{ mission }}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="offer.missions" class="profiles">
+    <h2>Profile wanted</h2>
+    <ul>
+      <li *ngFor="let profile of offer.profile">
+        {{ profile }}
+      </li>
+    </ul>
+  </div>
+  <p class="contract"><span>Type of contract: </span>{{ offer.contract }}</p>
+  <p class="deadline"><span>Deadline : </span>{{ offer.deadline | date: 'dd/MMMM/YYYY, hh:mm a'}}</p>
+  <p class="complementary_infos"><span>Complementary informations : </span><br> {{ offer.complementary_infos }}</p>
+</main>

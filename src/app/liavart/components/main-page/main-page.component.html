@@ -1,0 +1,8 @@
+<section *ngIf="url$ | async as url">
+  <div class="list" *ngIf="url.toString().includes('new-offer')===false">
+    <app-offers-list></app-offers-list>
+  </div>
+  <div class="new-offer" *ngIf="url.toString().includes('new-offer')">
+    <app-new-offer></app-new-offer>
+  </div>
+</section>

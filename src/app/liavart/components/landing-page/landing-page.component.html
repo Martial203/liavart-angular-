@@ -1,0 +1,28 @@
+<section>
+  <div>
+    <figure>
+      <img src="/assets/hiring.png">
+    </figure>
+  </div>
+  <form #loginForm="ngForm" (ngSubmit)="onLogin()">
+    <h1>LOGIN</h1>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>User name</mat-label>
+        <mat-icon matSuffix>person</mat-icon>
+        <input matInput type="text" name="userName" id="userName" required [(ngModel)]="userName"/>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <mat-icon matSuffix>lock</mat-icon>
+        <input type="password" matInput name="password" id="password" required [(ngModel)]="password"/>
+      </mat-form-field>
+    </p>
+    <p>You don't have any account ? <a routerLink="/liavart/sign-in">Sign in here</a></p>
+    <p>
+      <button mat-flat-button [disabled]="loginForm.invalid" color="primary">Connect</button>
+    </p>
+  </form>
+</section>

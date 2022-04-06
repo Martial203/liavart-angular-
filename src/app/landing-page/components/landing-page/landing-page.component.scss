@@ -1,0 +1,66 @@
+.main{
+    min-height: 70vh;
+    background-color: rgba(0,100,0,0.3);
+}
+.cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: space-around;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 15px;
+    a{
+        text-decoration: none;
+        p{
+            font-size: 16px;
+        }
+    }
+    #liavart_card{
+        margin-bottom: 15px;
+        figure{
+            background-image: none;
+            background-size: cover;
+            &:hover{
+                background-image: url('/assets/letStart.jpg');
+            }
+        }
+    }
+    #lishop_card{
+        figure{
+            background-image: url('/assets/ecommercefish.jpg');
+            background-size: cover;
+        }
+    }
+    .card{
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: rgba(0,10,10,0.1);
+        transition: transform 400ms;
+        figure{
+            height: 250px;
+            width: 250px;
+            background-color: rgba(0,10,10,0.4);
+            img{
+              height: 100%;
+              width: 100%;
+              transition: opacity 400ms;
+              &:hover{
+                  opacity: 0;
+                  transition: opacity 400ms;   
+              }
+            }
+        }
+        &:hover{
+            transition: transform 400ms;
+            transform: scale(1.015);
+        }
+    }
+}
+
+.title{
+    padding: 20px;
+    text-align: center;
+}

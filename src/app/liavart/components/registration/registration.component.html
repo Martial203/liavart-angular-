@@ -1,0 +1,82 @@
+<div class="body">
+  <h1>REGISTRATION</h1>
+  <p class="instructions">Provide the required informations to complete your registration.</p>
+  <section>
+    <form [formGroup]="registrationForm">
+      <div class="blocs">
+        <div class="bloc1">
+
+            <mat-form-field appearance="fill">
+              <mat-label>First name</mat-label>
+              <input matInput formControlName="firstName" placeholder="Ex: Larry">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name" name="name" placeholder="Ex: PAGE">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Gender</mat-label>
+              <mat-select formControlName="gender">
+                <mat-option></mat-option>
+                <mat-option value="male">Male</mat-option>
+                <mat-option value="female">Female</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Country of residence</mat-label>
+              <mat-select formControlName="country">
+                <mat-option></mat-option>
+                <mat-option value="cameroon">Cameroon</mat-option>
+                <mat-option value="congo">Congo</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Town of residence</mat-label>
+              <input matInput formControlName="town" placeholder="Ex: Washington">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Mail adress</mat-label>
+              <input matInput formControlName="email" placeholder="Ex: adressemail@gmail.com">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>User name</mat-label>
+              <input matInput formControlName="userName" placeholder="The name which is going to appears first on your profile">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Password</mat-label>
+              <input type="password" matInput formControlName="password" placeholder="A password for your account">
+            </mat-form-field>
+
+
+        </div>
+        <div class="bloc2">
+
+          <mat-form-field appearance="fill">
+            <mat-label>Confirm password</mat-label>
+            <input type="password" matInput placeholder="Confirm the password" formControlName="confirm">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Tell in some words to other users who you are..." formControlName="description"></textarea>
+          </mat-form-field>
+          <figure>
+            <img [src]="url" alt="Profile picture"/>
+          </figure>
+          <div><input id="fileInput" type="file" accept=".jpg, .png, .jpeg" (change)="selectFile($event)"></div>
+        </div>
+      </div>
+      <div class="buttons">
+        <p><button mat-flat-button (click)="onSubmitForm()" [disabled]="registrationForm.invalid || (formInfos$ | async).password!==(formInfos$ | async).confirm">Register</button></p>
+        <p><button mat-flat-button type="reset">Reset</button></p>
+      </div>
+    </form>
+  </section>
+</div>

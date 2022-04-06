@@ -1,0 +1,27 @@
+mat-form-field{
+  display: block;
+}
+h1{
+  text-align: center;
+}
+section{
+  overflow-y: scroll;
+  height: 90vh;
+  form{
+    padding-right: 48%;
+    .buttons{
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  .display{
+    background-color: rgba(0,0,15,0.1);
+    position: absolute;
+    top: 75px;
+    right: 20px;
+    height: 89vh;
+    width: 47%;
+    z-index: 1;
+    overflow: scroll;
+  }
+}
